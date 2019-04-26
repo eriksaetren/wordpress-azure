@@ -23,6 +23,9 @@
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 
+if (strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false)
+	$_SERVER['HTTPS']='on';
+
 $connectstr_dbhost = getenv('DATABASE_HOST');
 $connectstr_dbname = getenv('DATABASE_NAME');
 $connectstr_dbusername = getenv('DATABASE_USERNAME');
